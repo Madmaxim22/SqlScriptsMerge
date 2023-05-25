@@ -1,5 +1,3 @@
 SELECT product_name FROM ORDERS
-WHERE customer_id = (
-    SELECT id FROM CUSTOMERS
-    WHERE name = 'Алексей'
-);
+JOIN CUSTOMERS ON CUSTOMERS.id = ORDERS.customer_id
+WHERE CUSTOMERS.name = 'Алексей';
